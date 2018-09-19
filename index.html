@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
-    <script src="main.js"></script>
 </head>
 <body>
     <div class="container">
@@ -22,7 +21,7 @@
 
         <div class="row">
             <div class="col-md-12">
-                <h1 class="header">Hangman</h1>
+                <h1 class="header">HANGMAN</h1>
             </div>
         </div>
 
@@ -39,6 +38,48 @@
                         <h3>Press any key to start!</h3>
                     </div>
                 </div>
+                <!-- Win Count -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>Wins: <span id="winCount">0</span></h3>
+                    </div>
+                </div>
+                <!-- 'Choose your fighter' -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>Choose your fighter</h3>
+                    </div>
+                </div>
+                <!-- Current Word -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <span id="currentWord"></span>
+                    </div>
+                </div>
+                <!-- 'Guesses Remaining' -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>Guesses Remaining:</h3>
+                    </div>
+                </div>
+                <!-- Remaining Guess Number -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <span id="guessesLeft"></span>
+                    </div>
+                </div>
+                <!-- 'Letters Guessed' -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>Letters Guessed</h3>
+                    </div>
+                </div>
+                <!-- Letter List -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <span id="lettersGuessed"></span>
+                    </div>
+                </div>
 
             </div>
 
@@ -52,5 +93,6 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="assets/javascript/game.js"></script>
 </body>
 </html>
