@@ -30,7 +30,7 @@ function checkGuess(letter) {
     console.log(displayWord);
     let letterArray = displayWord.split("");
 
-    // Loop through word finding all instances of guessed letter, store the indicies in an array.
+    // Loop through word finding all instances of guessed letter, store the indicies in an array
     for (i = 0; i < letterArray.length; i++) {
         if (letterArray[i] === letter) {
             positions.push([i]);
@@ -41,7 +41,7 @@ function checkGuess(letter) {
     if (positions.length <= 0) {
         guessesLeft--;
     } else {
-        // Loop through all the indicies and replace the '_' with a letter.
+        // Loop through all the indicies and replace the '_ ' with a letter
         for(i = 0; i < positions.length; i++) {
             guessingWord[positions[i]] = letter;
             
@@ -144,13 +144,13 @@ function checkLoss() {
 
 // Event listener
 document.onkeydown = function(event) {
-    // If we finished a game, dump one keystroke and reset.
+    // Start a new game if Game Over
     if(gameOver) {
         resetGame();
         gameOver = false;
     } 
     else {
-        // Check to make sure a-z was pressed.
+        // Check to make sure a-z was pressed
         if(event.keyCode >= 65 && event.keyCode <= 90) {
             makeGuess(event.key);
             updatePage();
