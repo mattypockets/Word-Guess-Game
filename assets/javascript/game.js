@@ -79,7 +79,7 @@ function resetGame() {
     displayWord = (wordBank[guessingWordIndex]);
     
 
-
+    document.getElementById("gameScreen").src = "assets/images/go.jpg";
     updatePage();
     
 };
@@ -118,17 +118,22 @@ function makeGuess(letter) {
     }
 };
 
+// Check if the player has won
 function checkWin() {
-    if (guessingWord.indexOf === -1 ) {
+    if (guessingWord.indexOf("_ ") === -1 ) {
         wins ++;
-        
+        document.getElementById("gameScreen").src = "assets/images/success.png";
+        document.getElementById("startReset").innerText = "Press any key to play again";
+        gameOver = true;
     }
 
 }
 
+// Check if the player has lost
 function checkLoss() {
     if (guessesLeft == 0) {
         document.getElementById("gameScreen").src = "assets/images/failure.jpg";
+        document.getElementById("startReset").innerText = "Press any key to try again";
         gameOver = true;
     }
 };
@@ -149,7 +154,7 @@ document.onkeydown = function(event) {
         if(event.keyCode >= 65 && event.keyCode <= 90) {
             makeGuess(event.key);
             updatePage();
-            // checkWin();
+            checkWin();
             checkLoss();
             console.log(guessingWord);
         }
