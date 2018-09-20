@@ -27,3 +27,9 @@ h1, h3 {
     background-color: #cecece;
     height: 400px;
 }
+
+#currentWord {
+    text-align: center;
+    size: 2em;
+    color: #666666;
+}
