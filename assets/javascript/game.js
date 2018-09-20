@@ -3,8 +3,6 @@ var wordBank = ["mario",
 "yoshi",
 "pikachu",
 "kirby",
-"donkey kong",
-"captain falcon",
 "fox",
 "link",
 "jigglypuff",
@@ -20,30 +18,37 @@ var lettersGuessed = [];    // Stores which letters have been guessed
 var gameOver = true;       // Flag to start/restart the game
 var guessingWordIndex;      // Index of the current word
 var guessingWord = [];      // Current word
+var displayWord = "";
 
 
 // Check if input equals one of the letters
 // If input does not match letter, reduce number of guesses by one
 function checkGuess(letter) {
+
     // Array to store positions of letters in string
     var positions = [];
+    console.log(displayWord);
+    let letterArray = displayWord.split("");
 
     // Loop through word finding all instances of guessed letter, store the indicies in an array.
-    for (var i = 0; i < guessingWord.length; i++) {
-        if(guessingWord[i] === letter) {
-            positions.push(i);
+    for (i = 0; i < letterArray.length; i++) {
+        if (letterArray[i] === letter) {
+            positions.push([i]);
         }
     }
 
     // if there are no indicies, remove a guess
-    if (positions.length < 0) {
+    if (positions.length <= 0) {
         guessesLeft--;
     } else {
         // Loop through all the indicies and replace the '_' with a letter.
-        for(var i = 0; i < positions.length; i++) {
-            guessingWord[positions[i]] == letter;
+        for(i = 0; i < positions.length; i++) {
+            guessingWord[positions[i]] = letter;
+            
         }
+    
     }
+
 };
 
 
@@ -65,12 +70,18 @@ function resetGame() {
     lettersGuessed = [];
     guessingWord = [];
 
+
     // Create Guessing Word for page
     for (i=0; i<wordBank[guessingWordIndex].length; i++) {
-        guessingWord.push("_");
+        guessingWord.push("_ ");
     }
 
+    displayWord = (wordBank[guessingWordIndex]);
+    
+
+
     updatePage();
+    
 };
 
 
@@ -107,6 +118,21 @@ function makeGuess(letter) {
     }
 };
 
+function checkWin() {
+    if (guessingWord.indexOf === -1 ) {
+        wins ++;
+        
+    }
+
+}
+
+function checkLoss() {
+    if (guessesLeft == 0) {
+        document.getElementById("gameScreen").src = "assets/images/failure.jpg";
+        gameOver = true;
+    }
+};
+
 
 
 
@@ -124,7 +150,8 @@ document.onkeydown = function(event) {
             makeGuess(event.key);
             updatePage();
             // checkWin();
-            // checkLoss();
+            checkLoss();
+            console.log(guessingWord);
         }
     }
 };

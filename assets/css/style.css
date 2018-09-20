@@ -11,7 +11,7 @@ img {
     width: auto;
 }
 
-h1, h3 {
+h1, p {
     text-align: center;
     color: #666666;
 }
@@ -32,4 +32,10 @@ h1, h3 {
     text-align: center;
     size: 2em;
     color: #666666;
+}
+
+#gameScreen {
+    display: block;
+    margin: auto;
+    margin-top: 30px;
 }
